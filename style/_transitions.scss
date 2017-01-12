@@ -1,0 +1,82 @@
+//effet survol liens menu
+.underline-base
+{
+    a
+    {
+        display: inline-block;
+        position: relative;
+        &::after
+        {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 0px;
+            transition: width 0.5s ease, background-color 0.5s ease;
+        }
+        &:hover::after
+        {
+            width: 100%;
+            background: $default_primary_color;
+        }
+    }
+}
+
+.underline-left-to-right
+{
+    @extend .underline-base;
+}
+
+.underline-middle-out
+{
+    @extend .underline-base;
+    a::after
+    {
+        margin: auto;
+    }
+}
+
+.underline-right-to-left
+{
+    @extend .underline-base;
+    a::after
+    {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.underline-slide-in-slide-of
+{
+    @extend .underline-base;
+    a::before
+    {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        transition: width 0s ease, background .5s ease;
+    }
+    a::after
+    {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background: $default_primary_color;
+        transition: width 0.5s ease;
+    }
+    a:hover::before
+    {
+        width: 100%;
+        background: $default_primary_color;
+        transition: width 0.5s ease;
+    }
+    a:hover::after
+    {
+        background: none;
+        transition: all 0s ease;
+    }
+}

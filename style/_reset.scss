@@ -1,0 +1,148 @@
+/* Sources:
+Reset.css
+http://meyerweb.com/eric/tools/css/reset/
+https://github.com/mblode/marx
+https://github.com/necolas/normalize.css/
+
+HTML5 page with all elements
+https://github.com/cbracco/html5-test-page
+*/
+
+html,
+body
+{
+    width: 100%;
+    height: 100%;
+}
+
+body
+{
+    background: $default_background-3;
+    color: $default_color-1;
+}
+
+@font-face
+{
+    font-family: 'roboto-regular';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/roboto-regular.eot');
+    src: url('../fonts/roboto-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto-regular.ttf') format('truetype'),
+         url('../fonts/roboto-regular.woff') format('woff'),
+         url('../fonts/roboto-regular.woff2') format('woff2'),
+         url('../fonts/roboto-regular.svg#roboto-regular') format('svg');
+}
+
+*
+{
+    font-family: 'roboto-regular', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    &:not(progress)
+    {
+        border: none;
+    }
+}
+
+ol,
+ul
+{
+    list-style: none;
+    align-items: center;
+}
+
+blockquote,
+q
+{
+    quotes: none;
+    &:after,&:before
+    {
+        content: '';
+        content: none;
+    }
+}
+
+table
+{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+fieldset,
+hr
+{
+    border: 1px solid $default_color-3;
+}
+
+a
+{
+    vertical-align: baseline;
+    text-decoration: none;
+    color: $default_primary_color;
+}
+
+//champs de saisis
+select,
+textarea,
+input
+{
+    padding: 7px 0 7px 10px; //7px - meme hauteur que les boutons
+    color: $default_color-1;
+    border: 1px solid $default_color-3;
+    border-radius: 0;
+    appearance: none;
+    background: none;
+    &:focus
+    {
+        border: 1px solid $default_primary_color;
+
+    }
+}
+
+//champ de saisie, juste border-bottom
+// input,
+// select
+// {
+//     border: none;
+//     border-bottom: 1px solid $default_color-3;
+//     margin: 5px 0;
+//     &:focus
+//     {
+//         border: none;
+//         border-bottom: 1px solid $default_primary_color;
+//     }
+// }
+
+select,
+input[type='color']
+{
+    padding-left: 0;
+}
+
+//slider
+input[type='range']
+{
+    border: none;
+}
+
+//bouttons
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit']
+{
+    padding: 7px 25px; //7px - meme hauteur que les champs saisies
+    cursor: pointer;
+    color: $default_primary_color;
+    border: 1px solid $default_primary_color;
+    border-radius: 0;
+    background: none;
+    appearance: none;
+    &:hover
+    {
+        color: $default_secondary_color;
+        border: 1px solid $default_secondary_color;
+    }
+}
