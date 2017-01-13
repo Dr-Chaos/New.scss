@@ -1,0 +1,44 @@
+.btn
+{
+    padding: 7px 25px;
+    border-radius: 0;
+    background: none;
+    cursor: pointer;
+    appearance: none;
+}
+
+.btn-blue
+{
+    @extend .btn;
+    border: 1px solid $blue_500;
+    color: $blue_500;
+    &:hover
+    {
+        border: 1px solid $blue_300;
+        color: $blue_300;
+    }
+}
+
+.btn-red
+{
+    @extend .btn;
+    border: 1px solid $red_500 !important;
+    color: $red_500 !important;
+    &:hover
+    {
+        border: 1px solid $red_300 !important;
+        color: $red_300 !important;
+    }
+}
+
+.btn-green
+{
+    @extend .btn;
+    border: 1px solid $green_500 !important;
+    color: $green_500 !important;
+    &:hover
+    {
+        border: 1px solid $green_300 !important;
+        color: $green_300 !important;
+    }
+}
